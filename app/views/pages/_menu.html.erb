@@ -1,0 +1,48 @@
+<nav>
+  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+  
+  <div class="top-bar" id="main-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Cal Benefit Cup</li>
+      </ul>
+    </div>
+    
+    <div class="top-bar-right">
+      <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+        
+        <% @nav.each do |item| %>
+          
+          <% if item.subpages != [] %>
+            <li class="has-submenu">
+              <a href="#"><%= item.title.capitalize %></a>
+              <ul class="submenu menu vertical" data-submenu>
+                <% item.subpages.each do |sub| %>
+                  <li>
+                    <% unless sub.permalink == @page.permalink %>
+                      <a href="/<%= sub.permalink %>"><%= sub.title.capitalize %></a>
+                    <% else %>
+                      <%= sub.title.capitalize %>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+                    
+          <% elsif item.parent_page_id == nil %>
+            <li>
+              <% unless item.permalink == @page.permalink %>
+                <a href="/<%= item.permalink %>"><%= item.title.capitalize %></a>
+              <% else %>
+                <%= item.title.capitalize %>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
