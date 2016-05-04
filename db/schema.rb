@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20160503171719) do
   create_table "pages", force: :cascade do |t|
     t.string   "title",                          null: false
     t.text     "content",                        null: false
+    t.string   "permalink",                      null: false
     t.integer  "menu_index",     default: 0
     t.integer  "parent_page_id"
     t.string   "forward_url"
@@ -78,5 +79,6 @@ ActiveRecord::Schema.define(version: 20160503171719) do
   end
 
   add_index "pages", ["parent_page_id"], name: "index_pages_on_parent_page_id", using: :btree
+  add_index "pages", ["permalink"], name: "index_pages_on_permalink", using: :btree
 
 end
