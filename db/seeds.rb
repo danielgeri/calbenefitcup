@@ -14,7 +14,7 @@ home = Page.create!(title: 'Home',
                     is_displayed: true)
 
 
-registration = Page.create!(title: 'Registration',
+register = Page.create!(title: 'Register',
                             permalink: 'registration',
                             content: 'This is the registration page',
                             menu_index: 1,
