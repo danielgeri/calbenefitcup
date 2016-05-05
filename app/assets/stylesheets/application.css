@@ -14,13 +14,21 @@
  *= require_self
  */
 
+body {
+  background-color: #46535e;
+}
+
 .canvas {
-  background-image: url(/assets/bg-body.png);
+  background-image: url(/assets/bg-body.jpg);
   padding-bottom: 7rem;
 }
 
 main > div {
   padding: 1rem 2rem 2rem 2rem;
+}
+
+main article {
+  padding: 2rem;
 }
 
 .mast {
