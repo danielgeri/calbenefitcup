@@ -20,10 +20,15 @@ body {
 
 .canvas {
   background-image: url(/assets/bg-body.png);
+  padding-bottom: 7rem;
+}
+
+main > div {
+  padding: 1rem 2rem 2rem 2rem;
 }
 
 .mast {
-  padding: 3rem 0;
+  padding: 7rem 0;
 }
 
 li.menu-item > p {
@@ -33,8 +38,12 @@ li.menu-item > p {
   line-height: 1;
 }
 
-.callout.light-gray {
+.light-gray {
   background-color: #eeeeee;
+}
+
+.callout.dark-gray {
+  background-color: #46535e;
 }
 
 .callout.primary {
@@ -43,11 +52,7 @@ li.menu-item > p {
 }
 
 footer {
-  margin-top: 3rem;
-}
-
-footer div#copyright {
-  padding-bottom: 4rem;
+  padding: 3rem 0;
 }
 
 nav a {
