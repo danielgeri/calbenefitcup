@@ -14,6 +14,18 @@
  *= require_self
  */
 
+body {
+  background-color: #0a192d;
+}
+
+.canvas {
+  background-image: url(/assets/bg-body.png);
+}
+
+.mast {
+  padding: 3rem 0;
+}
+
 li.menu-item > p {
   color: white;
   padding: 0.7rem 1rem;
@@ -21,12 +33,21 @@ li.menu-item > p {
   line-height: 1;
 }
 
+.callout.light-gray {
+  background-color: #eeeeee;
+}
+
+.callout.primary {
+  background-color: #0a192d;
+  // background-color: #003262;
+}
+
 footer {
   margin-top: 3rem;
 }
 
 footer div#copyright {
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 
 nav a {

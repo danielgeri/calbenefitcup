@@ -18,14 +18,14 @@
           
           <% if item.subpages != [] %>
             <li class="has-submenu">
-              <a href="#"><%= item.title.capitalize %></a>
+              <a href="#"><%= item.title.titleize %></a>
               <ul class="submenu menu vertical" data-submenu>
                 <% item.subpages.each do |sub| %>
-                  <li>
+                  <li class="menu-item">
                     <% unless sub.permalink == @page.permalink %>
-                      <a href="/<%= sub.permalink %>"><%= sub.title.capitalize %></a>
+                      <a href="/<%= sub.permalink %>"><%= sub.title.titleize %></a>
                     <% else %>
-                      <%= sub.title.capitalize %>
+                      <p><%= sub.title.titleize %></p>
                     <% end %>
                   </li>
                 <% end %>
@@ -33,11 +33,11 @@
             </li>
                     
           <% elsif item.parent_page_id == nil %>
-            <li>
+            <li class="menu-item">
               <% unless item.permalink == @page.permalink %>
-                <a href="/<%= item.permalink %>"><%= item.title.capitalize %></a>
+                <a href="/<%= item.permalink %>"><%= item.title.titleize %></a>
               <% else %>
-                <%= item.title.capitalize %>
+                <p><%= item.title.titleize %></p>
               <% end %>
             </li>
           <% end %>
