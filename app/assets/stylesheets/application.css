@@ -12,8 +12,48 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
  */
+
+body {
+  background-color: #0a192d;
+}
+
+.canvas {
+  background-image: url(/assets/bg-body.png);
+  padding-bottom: 7rem;
+}
+
+main > div {
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.mast {
+  padding: 7rem 0;
+}
+
+li.menu-item > p {
+  color: white;
+  padding: 0.7rem 1rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.light-gray {
+  background-color: #eeeeee;
+}
+
+.callout.dark-gray {
+  background-color: #46535e;
+}
+
+.callout.primary {
+  background-color: #0a192d;
+  // background-color: #003262;
+}
+
+footer {
+  padding: 3rem 0;
+}
 
 nav a {
   text-decoration: none;

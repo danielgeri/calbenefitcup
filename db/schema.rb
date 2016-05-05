@@ -11,17 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 0) do
-=======
 ActiveRecord::Schema.define(version: 20160503171719) do
->>>>>>> 45cae84c93352c05497fa9cf4a3b786c1c74c34b
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-=======
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
@@ -87,5 +81,4 @@ ActiveRecord::Schema.define(version: 20160503171719) do
   add_index "pages", ["parent_page_id"], name: "index_pages_on_parent_page_id", using: :btree
   add_index "pages", ["permalink"], name: "index_pages_on_permalink", using: :btree
 
->>>>>>> 45cae84c93352c05497fa9cf4a3b786c1c74c34b
 end

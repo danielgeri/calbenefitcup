@@ -1,17 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" href="/assets/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title>
+      <%= @page.title %> | Cal Benefit Cup</title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "application"  %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id="fb-root"></div>
+    <script>
+     (function(d, s, id) {
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) return;
+       js = d.createElement(s);
+       js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <%= render "menu" %>
+    <div class="canvas">
+      <div class="large primary mast">
+        <div class="row column text-center">
+          <%= image_tag('/assets/header.png') %>
+        </div>
+      </div>
+      <main class="row">
+        <div class="small-centered small-12 large-10 large-centered columns light-gray">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
+    
+    <footer class="light-gray">
+      <div class="row light-gray">
+        <div class="large-4 columns">
+          <div>
+            <h4>Contact</h4>
+            <p>378 Simpson Center (SAHPC)<br>
+              2227 Piedmont Ave.,<br>
+              Berkeley, CA 94720</p>
+            
+            <p><%= mail_to("calbenefitcup@gmail.com") %></p>
+            <hr>
+            <p>&#169; 2016 Cal Benefit Cup<br>
+              All Rights Reserved.</p>
+            <p>Released under the <a href="http://www.gnu.org/licenses/agpl.html">AGPLv3</a></p>
+          </div>
+        </div>
+        <div class="large-4 columns">
+          <div>
+            <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/CalMensGym" data-widget-id="728036802871824384">Tweets by @CalMensGym</a>
+            <script>
+             ! function(d, s, id) {
+               var js, fjs = d.getElementsByTagName(s)[0],
+                   p = /^http:/.test(d.location) ? 'http' : 'https';
+               if (!d.getElementById(id)) {
+                 js = d.createElement(s);
+                 js.id = id;
+                 js.src = p + "://platform.twitter.com/widgets.js";
+                 fjs.parentNode.insertBefore(js, fjs);
+               }
+             }(document, "script", "twitter-wjs");
+            </script>
+          </div>
+        </div>
+        <div class="large-4 columns">
+          <div class="fb-page" data-href="https://www.facebook.com/CalMGym" data-tabs="timeline" data-width="360" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+            <div class="fb-xfbml-parse-ignore">
+              <blockquote cite="https://www.facebook.com/CalMGym"><a href="https://www.facebook.com/CalMGym">Cal Men&#039;s Gymnastics</a></blockquote>
+            </div>
+          </div>              
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

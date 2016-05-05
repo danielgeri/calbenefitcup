@@ -55,7 +55,7 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #ec5840,
 );
-$light-gray: #e6e6e6;
+$light-gray: #eeeeee;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
@@ -181,55 +181,55 @@ $stat-font-size: 2.5rem;
 
 // 6. Abide
 // --------
-
-$abide-inputs: true;
-$abide-labels: true;
-$input-background-invalid: map-get($foundation-palette, alert);
-$form-label-color-invalid: map-get($foundation-palette, alert);
-$input-error-color: map-get($foundation-palette, alert);
-$input-error-font-size: rem-calc(12);
-$input-error-font-weight: $global-weight-bold;
-
+/* 
+   $abide-inputs: true;
+   $abide-labels: true;
+   $input-background-invalid: map-get($foundation-palette, alert);
+   $form-label-color-invalid: map-get($foundation-palette, alert);
+   $input-error-color: map-get($foundation-palette, alert);
+   $input-error-font-size: rem-calc(12);
+   $input-error-font-weight: $global-weight-bold;
+ */
 // 7. Accordion
 // ------------
 
-$accordion-background: $white;
-$accordion-plusminus: true;
-$accordion-item-color: foreground($accordion-background, $primary-color);
-$accordion-item-background-hover: $light-gray;
-$accordion-item-padding: 1.25rem 1rem;
-$accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
-$accordion-content-color: foreground($accordion-background, $primary-color);
-$accordion-content-padding: 1rem;
-
+/* $accordion-background: $white;
+   $accordion-plusminus: true;
+   $accordion-item-color: foreground($accordion-background, $primary-color);
+   $accordion-item-background-hover: $light-gray;
+   $accordion-item-padding: 1.25rem 1rem;
+   $accordion-content-background: $white;
+   $accordion-content-border: 1px solid $light-gray;
+   $accordion-content-color: foreground($accordion-background, $primary-color);
+   $accordion-content-padding: 1rem;
+ */
 // 8. Accordion Menu
 // -----------------
-
-$accordionmenu-arrows: true;
-$accordionmenu-arrow-color: $primary-color;
-
+/* 
+   $accordionmenu-arrows: true;
+   $accordionmenu-arrow-color: $primary-color;
+ */
 // 9. Badge
 // --------
-
-$badge-background: $primary-color;
-$badge-color: foreground($badge-background);
-$badge-padding: 0.3em;
-$badge-minwidth: 2.1em;
-$badge-font-size: 0.6rem;
-
+/* 
+   $badge-background: $primary-color;
+   $badge-color: foreground($badge-background);
+   $badge-padding: 0.3em;
+   $badge-minwidth: 2.1em;
+   $badge-font-size: 0.6rem;
+ */
 // 10. Breadcrumbs
 // ---------------
-
-$breadcrumbs-margin: 0 0 $global-margin 0;
-$breadcrumbs-item-font-size: rem-calc(11);
-$breadcrumbs-item-color: $primary-color;
-$breadcrumbs-item-color-current: $black;
-$breadcrumbs-item-color-disabled: $medium-gray;
-$breadcrumbs-item-margin: 0.75rem;
-$breadcrumbs-item-uppercase: true;
-$breadcrumbs-item-slash: true;
-
+/* 
+   $breadcrumbs-margin: 0 0 $global-margin 0;
+   $breadcrumbs-item-font-size: rem-calc(11);
+   $breadcrumbs-item-color: $primary-color;
+   $breadcrumbs-item-color-current: $black;
+   $breadcrumbs-item-color-disabled: $medium-gray;
+   $breadcrumbs-item-margin: 0.75rem;
+   $breadcrumbs-item-uppercase: true;
+   $breadcrumbs-item-slash: true;
+ */
 // 11. Button
 // ----------
 
@@ -315,10 +315,10 @@ $dropdownmenu-border: 1px solid $medium-gray;
 // 18. Flex Video
 // --------------
 
-$flexvideo-margin-bottom: rem-calc(16);
-$flexvideo-ratio: 4 by 3;
-$flexvideo-ratio-widescreen: 16 by 9;
-
+/* $flexvideo-margin-bottom: rem-calc(16);
+   $flexvideo-ratio: 4 by 3;
+   $flexvideo-ratio-widescreen: 16 by 9;
+ */
 // 19. Forms
 // ---------
 
@@ -385,42 +385,27 @@ $menu-icon-spacing: 0.25rem;
 
 // 23. Meter
 // ---------
-
-$meter-height: 1rem;
-$meter-radius: $global-radius;
-$meter-background: $medium-gray;
-$meter-fill-good: $success-color;
-$meter-fill-medium: $warning-color;
-$meter-fill-bad: $alert-color;
-
+/* 
+   $meter-height: 1rem;
+   $meter-radius: $global-radius;
+   $meter-background: $medium-gray;
+   $meter-fill-good: $success-color;
+   $meter-fill-medium: $warning-color;
+   $meter-fill-bad: $alert-color;
+ */
 // 24. Off-canvas
 // --------------
-
-$offcanvas-size: 250px;
-$offcanvas-background: $light-gray;
-$offcanvas-zindex: -1;
-$offcanvas-transition-length: 0.5s;
-$offcanvas-transition-timing: ease;
-$offcanvas-fixed-reveal: true;
-$offcanvas-exit-background: rgba($white, 0.25);
-$maincontent-class: 'off-canvas-content';
-$maincontent-shadow: 0 0 10px rgba($black, 0.5);
-
-// 25. Orbit
-// ---------
-
-$orbit-bullet-background: $medium-gray;
-$orbit-bullet-background-active: $dark-gray;
-$orbit-bullet-diameter: 1.2rem;
-$orbit-bullet-margin: 0.1rem;
-$orbit-bullet-margin-top: 0.8rem;
-$orbit-bullet-margin-bottom: 0.8rem;
-$orbit-caption-background: rgba($black, 0.5);
-$orbit-caption-padding: 1rem;
-$orbit-control-background-hover: rgba($black, 0.5);
-$orbit-control-padding: 1rem;
-$orbit-control-zindex: 10;
-
+/* 
+   $offcanvas-size: 250px;
+   $offcanvas-background: $light-gray;
+   $offcanvas-zindex: -1;
+   $offcanvas-transition-length: 0.5s;
+   $offcanvas-transition-timing: ease;
+   $offcanvas-fixed-reveal: true;
+   $offcanvas-exit-background: rgba($white, 0.25);
+   $maincontent-class: 'off-canvas-content';
+   $maincontent-shadow: 0 0 10px rgba($black, 0.5);
+ */
 // 26. Pagination
 // --------------
 
@@ -440,25 +425,25 @@ $pagination-arrows: true;
 
 // 27. Progress Bar
 // ----------------
-
-$progress-height: 1rem;
-$progress-background: $medium-gray;
-$progress-margin-bottom: $global-margin;
-$progress-meter-background: $primary-color;
-$progress-radius: $global-radius;
-
+/* 
+   $progress-height: 1rem;
+   $progress-background: $medium-gray;
+   $progress-margin-bottom: $global-margin;
+   $progress-meter-background: $primary-color;
+   $progress-radius: $global-radius;
+ */
 // 28. Reveal
 // ----------
-
-$reveal-background: $white;
-$reveal-width: 600px;
-$reveal-max-width: $global-width;
-$reveal-padding: $global-padding;
-$reveal-border: 1px solid $medium-gray;
-$reveal-radius: $global-radius;
-$reveal-zindex: 1005;
-$reveal-overlay-background: rgba($black, 0.45);
-
+/* 
+   $reveal-background: $white;
+   $reveal-width: 600px;
+   $reveal-max-width: $global-width;
+   $reveal-padding: $global-padding;
+   $reveal-border: 1px solid $medium-gray;
+   $reveal-radius: $global-radius;
+   $reveal-zindex: 1005;
+   $reveal-overlay-background: rgba($black, 0.45);
+ */
 // 29. Slider
 // ----------
 
@@ -523,14 +508,14 @@ $tab-content-padding: 1rem;
 
 // 33. Thumbnail
 // -------------
-
-$thumbnail-border: solid 4px $white;
-$thumbnail-margin-bottom: $global-margin;
-$thumbnail-shadow: 0 0 0 1px rgba($black, 0.2);
-$thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
-$thumbnail-transition: box-shadow 200ms ease-out;
-$thumbnail-radius: $global-radius;
-
+/* 
+   $thumbnail-border: solid 4px $white;
+   $thumbnail-margin-bottom: $global-margin;
+   $thumbnail-shadow: 0 0 0 1px rgba($black, 0.2);
+   $thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
+   $thumbnail-transition: box-shadow 200ms ease-out;
+   $thumbnail-radius: $global-radius;
+ */
 // 34. Title Bar
 // -------------
 
@@ -564,4 +549,3 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
-
