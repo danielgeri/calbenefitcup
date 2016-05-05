@@ -14,10 +14,6 @@
  *= require_self
  */
 
-body {
-  background-color: #0a192d;
-}
-
 .canvas {
   background-image: url(/assets/bg-body.png);
   padding-bottom: 7rem;
