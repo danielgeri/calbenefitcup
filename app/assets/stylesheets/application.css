@@ -12,8 +12,22 @@
  *
  *= require_tree .
  *= require_self
- *= require foundation_and_overrides
  */
+
+li.menu-item > p {
+  color: white;
+  padding: 0.7rem 1rem;
+  margin: 0;
+  line-height: 1;
+}
+
+footer {
+  margin-top: 3rem;
+}
+
+footer div#copyright {
+  margin-bottom: 4rem;
+}
 
 nav a {
   text-decoration: none;
