@@ -15,7 +15,7 @@
  */
 
 body {
-  background-color: #46535e;
+  background-color: #eeeeee;
 }
 
 .canvas {
@@ -23,12 +23,29 @@ body {
   padding-bottom: 7rem;
 }
 
+aside .columns {
+  padding-right: 0;
+}
+
 main > div {
   padding: 1rem 2rem 2rem 2rem;
 }
 
+div#facebook iframe {
+  border-radius: 0.25rem;
+}
+
 main article {
-  padding: 2rem;
+  padding: 1rem 2rem;
+}
+
+#page-title {
+  padding-bottom: 1rem;
+}
+
+.main {
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
 }
 
 .mast {
