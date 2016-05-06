@@ -14,9 +14,9 @@ home = Page.create!(title: 'Home',
                     is_displayed: true)
 
 
-register = Page.create!(title: 'Register',
+register = Page.create!(title: 'Registration',
                             permalink: 'registration',
-                            content: 'This is the registration page',
+                            content: '<h3 style="text-align: center;">How to Register</h3> <ol> <li>Fill and mail in the REGISTRATION FORM to the address listed on the form OR Email your Excel roster to calbenefitcup@gmail.com. To be complete, registration must include: <ul> <li>Club Name, USAG #, Address, Telephone &amp; Email</li> <li>Coach Name(s), USAG # &amp; Safety Certification Expiration Date</li> <li>Athlete Name, USAG #, Level, Birthdate &amp; T-shirt Size</li> </ul> </li> <li>&nbsp;Make check payable to Cal Gymnastics Boosters (Minimum $100.00 non-refundable deposit)</li> <li>Mail check to:</li> </ol> <p style="text-align: center;">Brett McClure<br /> 378 Simpson Center (SAHPC)<br /> 2227 Piedmont Ave., Berkeley, CA 94720</p> <p>&nbsp;</p> <h3 style="text-align: center;">2016 Competitive Entry Fees</h3> <table border="1" cellpadding="1" cellspacing="1"> <tbody> <tr> <td><strong>Compulsory Levels 4-7</strong></td> <td>$15</td> </tr> <tr> <td><strong>Optionals Levels 8-10 and Elite</strong></td> <td>$115</td> </tr> <tr> <td> <p><strong>Team Fee*</strong></p> </td> <td>$65</td> </tr> </tbody> </table> <p>* A team is comprised of 3 athletes in the same level.</p> <p>A Cal Benefit Cup grip bag and other materials are included with all entries.</p> <p>&nbsp;</p> <h3 style="text-align: center;">Important Registration Policies</h3> <ul> <li>It is your responsibility to provide coach and gymnast information at registration. No coach can be allowed on the floor during the meet if USAG and safety certification information is not submitted AND current. No gymnast can be allowed to compete if USAG information is not submitted AND current.</li> <li>Registration for each session will close when the session is full</li> <li>Available slots are allotted on a first-come, first served basis</li> <li>Slots are only guaranteed after corresponding registration fees have been received</li> <li>All eligible teams will be registered, unless you specifically opt out of team competition</li> <li>A non-refundable registration deposit ($100) is due upon application</li> <li>Make check payable to Cal Gymnastics Boosters</li> <li>Full balance due by Dec 12, 2015</li> </ul> <h3 style="text-align: center;">Refunds</h3> <ul> <li>Requests for refunds must be received before Dec 12, 2015</li> <li>After Dec 12, 2015 refund requests must be accompanied by a doctor&rsquo;s note</li> <li>No refunds for requests made after Jan 2, 2016</li> <li>All refunds will be processed after the meet</li> </ul>',
                             menu_index: 1,
                             is_displayed: true)
 
@@ -28,15 +28,14 @@ meet_info = Page.create!(title: 'Meet Info',
 
 staff = Page.create!(title: 'Staff',
                      permalink: 'staff',
-                     content: 'This is the staff page',
+                     content: '<p style="text-align: center;"><strong>Meet Director</strong><br /> Brett McClure<br /> University of California<br /> 378 Simpson Center (SAHPC)<br /> Berkeley, CA 94720-4422<br /> <a href="mailto:bmcclure@berkeley.edu">bmcclure@berkeley.edu</a></p> <p style="text-align: center;"><strong>Assistant Meet Director</strong><br /> JT Okada<br /> University of California<br /> 379 Simpson Center (SAHPC)<br /> Berkeley, CA 94720-4422<br /> <a href="mailto:jto@berkeley.edu">jto@berkeley.edu</a></p> <p style="text-align: center;"><strong>Volunteer Assistant Coach</strong><br /> Jonathan Charter<br /> University of California<br /> 379 Simpson Center (SAHPC)<br /> Berkeley, CA 94720-4422<br /> <a href="mailto:jcharter@berkeley.edu">jcharter@berkeley.edu</a></p> <p style="text-align: center;"><strong>Media Relations</strong><br /> Jordan Stepp<br /> Assistant Athletic Communications<br /> University of California<br /> 349 Haas Pavilion<br /> Berkeley, CA 94720-4422<br /> (510) 643-5846<br /> (510) 643-7778 fax<br /> <a href="mailto:aowheeler@berkeley.edu">aowheeler@berkeley.edu</a></p> <p style="text-align: center;"><strong>Event Management</strong><br /> Jaime Santoyo<br /> Event Manager<br /> University of California<br /> 77E Haas Pavilion<br /> Berkeley, CA 94720-4422<br /> (510) 642-5454<br /> (510) 604-8132 cell<br /> (510) 643-1551 fax<br /> <a href="mailto:jsantoyo@berkeley.edu">jsantoyo@berkeley.edu</a></p> <p style="text-align: center;"><strong>Facility Management</strong><br /> Mike Huff<br /> Asst Athletic Director of Facilities<br /> 75 Haas Pavilion<br /> Berkeley, CA 94720-4422<br /> (510) 643-9759<br /> (510) 642-9262 fax<br /> <a href="mailto:mhuff@berkeley.edu">mhuff@berkeley.edu</a></p>',
                      parent_page_id: meet_info.id,
                      menu_index: 0,
                      is_displayed: true)
 
-
 admission = Page.create!(title: 'Admission',
                           permalink: 'admission',
-                          content: 'This is the admissions page',
+                          content: '<table border="1" cellpadding="1" cellspacing="1"> <tbody> <tr> <td><strong>Adults (Ages 13-64)</strong></td> <td><strong>Price</strong></td> </tr> <tr> <td>All Session Pass (Including Level 10 Finals)</td> <td>$25</td> </tr> <tr> <td>JO Sessions (L4 &ndash; 10)</td> <td>$10/session</td> </tr> <tr> <td>Level 10 Finals</td> <td>$15</td> </tr> <tr> <td><strong>Children (Ages 4&ndash;12) &amp; Seniors (Ages 65+)</strong></td> <td>&nbsp;</td> </tr> <tr> <td>All Session Pass (Including Level 10 Finals)</td> <td>$10</td> </tr> <tr> <td>JO Sessions (Level 4 &ndash; 10)</td> <td>$5/session</td> </tr> <tr> <td>Level 10 Finals</td> <td>$5</td> </tr> <tr> <td><strong>College Students with ID</strong></td> <td>$5</td> </tr> <tr> <td><strong>Program</strong></td> <td>$5</td> </tr> </tbody> </table> <p>&nbsp;</p>',
                           parent_page_id: meet_info.id,
                           menu_index: 1,
                           is_displayed: true)
@@ -48,9 +47,9 @@ schedule = Page.create!(title: 'Schedule',
                         menu_index: 2,
                         is_displayed: true)
 
-haas_pavillion = Page.create!(title: 'Haas Pavillion',
-                              permalink: 'haas_pavillion',
-                              content: 'This is the haas pavillion page',
+haas_pavilion = Page.create!(title: 'Haas Pavilion',
+                              permalink: 'haas_pavilion',
+                              content: 'This is the haas pavilion page',
                               parent_page_id: meet_info.id,
                               menu_index: 3,
                               is_displayed: true)

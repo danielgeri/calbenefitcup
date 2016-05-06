@@ -15,16 +15,37 @@
  */
 
 body {
-  background-color: #0a192d;
+  background-color: #eeeeee;
 }
 
 .canvas {
-  background-image: url(/assets/bg-body.png);
+  background-image: url(/assets/bg-body.jpg);
   padding-bottom: 7rem;
+}
+
+aside .columns {
+  padding-right: 0;
 }
 
 main > div {
   padding: 1rem 2rem 2rem 2rem;
+}
+
+div#facebook iframe {
+  border-radius: 0.25rem;
+}
+
+main article {
+  padding: 1rem 2rem;
+}
+
+#page-title {
+  padding-bottom: 1rem;
+}
+
+.main {
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
 }
 
 .mast {
