@@ -100,7 +100,15 @@ a.facebook-ico {
 }
 
 .mast {
-  padding: 7rem 0;
+  padding: 4rem 0 3rem 0;
+}
+
+.mast h5 {
+  color: white;
+}
+
+.mast a.button {
+  margin-top: 1rem;
 }
 
 li.menu-item > p {
