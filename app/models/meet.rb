@@ -38,6 +38,17 @@ class Meet < ActiveRecord::Base
   end
 
   def date_range
-    # start = self.
+    if starts_on.strftime("%m") != ends_on.strftime("%m")
+      starts_on.strftime("%B") + " " +
+        starts_on.strftime("%-d") +
+        " - " +
+        ends_on.strftime("%B") + " " +
+        ends_on.strftime("%-d")
+    else
+      starts_on.strftime("%B") + " " +
+        starts_on.strftime("%-d") +
+        " - " +
+        ends_on.strftime("%-d")
+    end
   end
 end
