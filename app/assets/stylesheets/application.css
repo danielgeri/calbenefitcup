@@ -20,7 +20,9 @@ body {
 
 .canvas {
   background-image: url(/assets/bg-body.jpg);
-  padding-bottom: 7rem;
+  padding-bottom: 5rem;
+  background-color: #0a192d;
+  background-repeat: no-repeat;
 }
 
 aside {
@@ -31,6 +33,10 @@ aside .columns {
   padding-right: 0;
 }
 
+.main {
+  min-height: 725px;
+}
+
 main > div {
   padding: 1rem 2rem 2rem 2rem;
 }
@@ -39,8 +45,49 @@ div#facebook iframe {
   border-radius: 0.25rem;
 }
 
+#facebook {
+  
+}
+
+footer hr {
+  width: 18rem;
+  float: left;
+}
+
+footer hr + p {
+  clear: both;
+}
+
 main article {
   padding: 1rem 2rem;
+}
+
+.socials {
+  margin-top: 2rem;
+}
+
+.socials ul {
+  margin-left: 0;
+}
+
+.socials li {
+  list-style: none;
+  float: left;
+}
+
+.socials a {
+  display: block;
+  height: 60px;
+  width: 60px;
+  background: url("/assets/social.png") no-repeat center 0;
+}
+
+a.twitter-ico {
+  background-position: center 0;
+}
+
+a.facebook-ico {
+  background-position: center -200px;
 }
 
 #page-title {
