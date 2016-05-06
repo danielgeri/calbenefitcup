@@ -12,16 +12,16 @@ ActiveAdmin.register Meet do
       f.input :gender, as: :select, collection: ["boys", "girls", "co-ed"]
       f.input :starts_on,
               as: :datepicker,
-              datepicker_options: { min_date: "1D" }
+              datepicker_options: { min_date: "0D" }
       f.input :ends_on,
               as: :datepicker,
-              datepicker_options: { min_date: "1D" }
+              datepicker_options: { min_date: "0D" }
       f.input :register_by,
               as: :datepicker,
-              datepicker_options: { min_date: "1D" }
+              datepicker_options: { min_date: "0D" }
       f.input :no_refund_after,
               as: :datepicker,
-              datepicker_options: { min_date: "1D" }
+              datepicker_options: { min_date: "0D" }
       f.input :is_current
     end
     f.actions
