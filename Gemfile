@@ -37,6 +37,8 @@ gem 'paperclip'
 
 # Use Foundation for front-end
 gem 'foundation-rails'
+#needed for aws
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
