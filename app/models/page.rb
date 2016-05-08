@@ -8,13 +8,19 @@ class Page < ActiveRecord::Base
 
   validates_uniqueness_of :permalink
   validates_presence_of :permalink, :title
+  validate :cannot_display_draft
 
   before_validation :permalink_from_title
-  
+
+  def cannot_display_draft
+    errors.add(:is_displayed, 'cannot be a draft too') if is_displayed &&
+                                                          is_draft
+  end
+
   def permalink_from_title
     self.permalink = title.parameterize if permalink == ''
   end
-  
+
   def to_param
     permalink
   end
