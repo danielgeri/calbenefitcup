@@ -4,7 +4,10 @@ ActiveAdmin.register Page do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
   permit_params :title, :content, :menu_index, :parent_page, :forward_url,
-                :is_displayed, :is_draft, :permalink, :parent_page_id
+                :is_displayed, :is_draft, :permalink, :parent_page_id,
+                headlines_attributes: [:id, :announcement, :published_on],
+                images_attributes:
+                  [:id, :image_location, :caption, :slide_index]
 
   controller do
     def find_resource
@@ -23,15 +26,29 @@ ActiveAdmin.register Page do
       f.input :is_displayed
       f.input :is_draft
     end
+    f.inputs do
+      f.has_many :headlines, new_record: 'Add Headline' do |h|
+        h.input :announcement, as: :ckeditor
+        h.input :published_on, as: :datepicker
+      end
+    end
+    f.inputs do
+      f.has_many :images, new_record: 'Add an Image' do |i|
+        i.input :image_location, as: :file
+        i.input :caption
+        i.input :slide_index
+      end
+    end
     f.actions
   end
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+end
 
+ActiveAdmin.register Headline do
+  belongs_to :page
+  navigation_menu :page
+end
 
+ActiveAdmin.register Image do
+  belongs_to :page
+  navigation_menu :page
 end
