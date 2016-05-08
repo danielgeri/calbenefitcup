@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506075024) do
+ActiveRecord::Schema.define(version: 20160507190539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,28 @@ ActiveRecord::Schema.define(version: 20160506075024) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "headlines", force: :cascade do |t|
+    t.integer "page_id"
+    t.text    "announcement"
+    t.date    "published_on"
+  end
+
+  add_index "headlines", ["page_id"], name: "index_headlines_on_page_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.integer  "page_id"
+    t.string   "image_location_file_name",                null: false
+    t.string   "image_location_content_type",             null: false
+    t.integer  "image_location_file_size",                null: false
+    t.datetime "image_location_updated_at",               null: false
+    t.string   "caption"
+    t.integer  "slide_index",                 default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["page_id"], name: "index_images_on_page_id", using: :btree
 
   create_table "meets", force: :cascade do |t|
     t.date     "starts_on",                      null: false
