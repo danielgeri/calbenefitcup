@@ -67,8 +67,8 @@ ActiveRecord::Schema.define(version: 20160507190539) do
 
   create_table "headlines", force: :cascade do |t|
     t.integer "page_id"
-    t.text    "announcement"
-    t.date    "published_on"
+    t.text    "announcement", null: false
+    t.date    "published_on", null: false
   end
 
   add_index "headlines", ["page_id"], name: "index_headlines_on_page_id", using: :btree

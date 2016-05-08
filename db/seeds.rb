@@ -6,14 +6,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'admin@example.com', password: 'asdfasdf', password_confirmation: 'asdfasdf')
 
 home = Page.create!(title: 'Home',
                     permalink: 'home',
-                    content: '<div aria-label="Competition Photos" class="orbit image-orbit" data-orbit="" role="region"><button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>◀︎</button><button class="orbit-next"><span class="show-for-sr">Next Slide</span>▶︎</button> <ul class="orbit-container"> <li class="is-active orbit-slide"><img alt="photo1" class="orbit-image" src="/ckeditor_assets/pictures/1/content_img_0560.jpg" /><figcaption class="orbit-caption">Photo: Photographer Name</figcaption></li> <li class="orbit-slide"><img alt="photo2" class="orbit-image" src="/ckeditor_assets/pictures/2/content_img_0581.jpg" /><figcaption class="orbit-caption">Photo: Photographer Name</figcaption></li> </ul> </div> <h3 class="text-center news"><u>Latest News &amp; Announcements</u></h3> <div aria-label="Info Boxes" class="orbit text-orbit" data-orbit="" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" role="region"> <ul class="orbit-container"> <li class="orbit-slide"> <div> <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p> </div> </li> <li class="orbit-slide"> <div> <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.</p> </div> </li> </ul> <nav class="orbit-bullets"><button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button><button data-slide="1"><span class="show-for-sr">Second slide details.</span></button></nav> </div>',
+                    content: '',
                     menu_index: 0,
                     is_displayed: true)
 
+home.headlines.create!(announcement: '<p>Welcome to the new Cal Benefit Cup website!</p>',
+                       published_on: "2016-05-06")
+
+home.headlines.create!(announcement: '<p>Registration for the October event will open soon.</p>',
+                       published_on: "2016-05-05")
 
 register = Page.create!(title: 'Registration',
                             permalink: 'registration',
