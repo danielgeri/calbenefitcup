@@ -1,0 +1,16 @@
+<div class="large primary mast">
+  <div class="row column text-center">
+    <%= image_tag('/assets/header.png') %>
+    <% if @meet %>
+      <div>
+        <h5><%= @meet.name %><br>
+          <%= @meet_range %></h5>
+        <a class="button" href="/registration">REGISTRATION OPEN</a>
+      </div>
+    <% else %>
+      <div>
+        <a class="button alert">REGISTRATION CLOSED</a>
+      </div>
+    <% end %>
+  </div>
+</div>
