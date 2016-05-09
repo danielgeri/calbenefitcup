@@ -6,7 +6,7 @@
     <link rel="icon" href="/assets/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= @page.title %> | Cal Benefit Cup</title>
+    <title><%= @page.title + ' | ' if @page.permalink != "home" %>Cal Benefit Cup</title>
 
     <%= stylesheet_link_tag    "application"  %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>

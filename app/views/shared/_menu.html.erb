@@ -13,32 +13,21 @@
     
     <div class="top-bar-right">
       <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
-        
-        <% @nav.each do |item| %>
-          
-          <% if !item.subpages.empty? %>
-            <li class="has-submenu">
-              <a href="#"><%= item.title.titleize %></a>
+        <% @nav[nil].each do |item| %>
+          <% unless !@nav[item[2]].nil? %>
+            <li class="menu-item">
+              <%= link_to item[1], page_path(item[0]) %>
+            </li>
+          <% else %>
+            <li class="has_submenu">
+              <%= link_to item[1], page_path(item[0]) %>
               <ul class="submenu menu vertical" data-submenu>
-                <% item.subpages.each do |sub| %>
+                <% @nav[item[2]].each do |sub| %>
                   <li class="menu-item">
-                    <% unless sub.permalink == @page.permalink %>
-                      <a href="/<%= sub.permalink %>"><%= sub.title.titleize %></a>
-                    <% else %>
-                      <p><%= sub.title.titleize %></p>
-                    <% end %>
+                    <%= link_to sub[1], page_path(sub[0]) %>
                   </li>
                 <% end %>
               </ul>
-            </li>
-                    
-          <% elsif item.parent_page_id.nil? %>
-            <li class="menu-item">
-              <% unless item.permalink == @page.permalink %>
-                <a href="/<%= item.permalink %>"><%= item.title.titleize %></a>
-              <% else %>
-                <p><%= item.title.titleize %></p>
-              <% end %>
             </li>
           <% end %>
         <% end %>
