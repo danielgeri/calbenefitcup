@@ -27,66 +27,48 @@ register = Page.create!(title: 'Registration',
                             is_displayed: true)
 
 meet_info = Page.create!(title: 'Meet Info',
-                         permalink: 'meet_info',
+                         permalink: 'meet-info',
                          content: 'This is the meet info page',
                          menu_index: 2,
                          is_displayed: true)
 
-staff = Page.create!(title: 'Staff',
-                     permalink: 'staff',
-                     content: '<p style="text-align: center;"><strong>Meet Director</strong><br /> Brett McClure<br /> University of California<br /> 378 Simpson Center (SAHPC)<br /> Berkeley, CA 94720-4422<br /> <a href="mailto:bmcclure@berkeley.edu">bmcclure@berkeley.edu</a></p> <p style="text-align: center;"><strong>Assistant Meet Director</strong><br /> JT Okada<br /> University of California<br /> 379 Simpson Center (SAHPC)<br /> Berkeley, CA 94720-4422<br /> <a href="mailto:jto@berkeley.edu">jto@berkeley.edu</a></p> <p style="text-align: center;"><strong>Volunteer Assistant Coach</strong><br /> Jonathan Charter<br /> University of California<br /> 379 Simpson Center (SAHPC)<br /> Berkeley, CA 94720-4422<br /> <a href="mailto:jcharter@berkeley.edu">jcharter@berkeley.edu</a></p> <p style="text-align: center;"><strong>Media Relations</strong><br /> Jordan Stepp<br /> Assistant Athletic Communications<br /> University of California<br /> 349 Haas Pavilion<br /> Berkeley, CA 94720-4422<br /> (510) 643-5846<br /> (510) 643-7778 fax<br /> <a href="mailto:aowheeler@berkeley.edu">aowheeler@berkeley.edu</a></p> <p style="text-align: center;"><strong>Event Management</strong><br /> Jaime Santoyo<br /> Event Manager<br /> University of California<br /> 77E Haas Pavilion<br /> Berkeley, CA 94720-4422<br /> (510) 642-5454<br /> (510) 604-8132 cell<br /> (510) 643-1551 fax<br /> <a href="mailto:jsantoyo@berkeley.edu">jsantoyo@berkeley.edu</a></p> <p style="text-align: center;"><strong>Facility Management</strong><br /> Mike Huff<br /> Asst Athletic Director of Facilities<br /> 75 Haas Pavilion<br /> Berkeley, CA 94720-4422<br /> (510) 643-9759<br /> (510) 642-9262 fax<br /> <a href="mailto:mhuff@berkeley.edu">mhuff@berkeley.edu</a></p>',
-                     parent_page_id: meet_info.id,
-                     menu_index: 0,
-                     is_displayed: true)
 
-admission = Page.create!(title: 'Admission',
-                          permalink: 'admission',
-                          content: '<table border="1" cellpadding="1" cellspacing="1"> <tbody> <tr> <td><strong>Adults (Ages 13-64)</strong></td> <td><strong>Price</strong></td> </tr> <tr> <td>All Session Pass (Including Level 10 Finals)</td> <td>$25</td> </tr> <tr> <td>JO Sessions (L4 &ndash; 10)</td> <td>$10/session</td> </tr> <tr> <td>Level 10 Finals</td> <td>$15</td> </tr> <tr> <td><strong>Children (Ages 4&ndash;12) &amp; Seniors (Ages 65+)</strong></td> <td>&nbsp;</td> </tr> <tr> <td>All Session Pass (Including Level 10 Finals)</td> <td>$10</td> </tr> <tr> <td>JO Sessions (Level 4 &ndash; 10)</td> <td>$5/session</td> </tr> <tr> <td>Level 10 Finals</td> <td>$5</td> </tr> <tr> <td><strong>College Students with ID</strong></td> <td>$5</td> </tr> <tr> <td><strong>Program</strong></td> <td>$5</td> </tr> </tbody> </table> <p>&nbsp;</p>',
-                          parent_page_id: meet_info.id,
-                          menu_index: 1,
-                          is_displayed: true)
 
 schedule = Page.create!(title: 'Schedule',
                         permalink: 'schedule',
                         content: 'This is the schedule page',
                         parent_page_id: meet_info.id,
-                        menu_index: 2,
+                        menu_index: 0,
                         is_displayed: true)
 
+admission = Page.create!(title: 'Admission',
+                         permalink: 'admission',
+                         content: '<table border="1" cellpadding="1" cellspacing="1"> <tbody> <tr> <td><strong>Adults (Ages 13-64)</strong></td> <td><strong>Price</strong></td> </tr> <tr> <td>All Session Pass (Including Level 10 Finals)</td> <td>$25</td> </tr> <tr> <td>JO Sessions (L4 &ndash; 10)</td> <td>$10/session</td> </tr> <tr> <td>Level 10 Finals</td> <td>$15</td> </tr> <tr> <td><strong>Children (Ages 4&ndash;12) &amp; Seniors (Ages 65+)</strong></td> <td>&nbsp;</td> </tr> <tr> <td>All Session Pass (Including Level 10 Finals)</td> <td>$10</td> </tr> <tr> <td>JO Sessions (Level 4 &ndash; 10)</td> <td>$5/session</td> </tr> <tr> <td>Level 10 Finals</td> <td>$5</td> </tr> <tr> <td><strong>College Students with ID</strong></td> <td>$5</td> </tr> <tr> <td><strong>Program</strong></td> <td>$5</td> </tr> </tbody> </table> <p>&nbsp;</p>',
+                         parent_page_id: meet_info.id,
+                         menu_index: 1,
+                         is_displayed: true)
+
+
 haas_pavilion = Page.create!(title: 'Haas Pavilion',
-                              permalink: 'haas_pavilion',
-                              content: 'This is the haas pavilion page',
-                              parent_page_id: meet_info.id,
-                              menu_index: 3,
-                              is_displayed: true)
+                             permalink: 'haas-pavilion',
+                             content: 'This is the haas pavilion page',
+                             parent_page_id: meet_info.id,
+                             menu_index: 2,
+                             is_displayed: true)
 
 accommodations = Page.create!(title: 'Accommodations',
                               permalink: 'accommodations',
                               content: 'This is the accommodations page',
                               parent_page_id: meet_info.id,
-                              menu_index: 4,
+                              menu_index: 3,
                               is_displayed: true)
 
-restaurants = Page.create!(title: 'Restaurants',
-                           permalink: 'restaurants',
-                           content: 'This is the restaurants page',
-                           parent_page_id: meet_info.id,
-                           menu_index: 5,
-                           is_displayed: true)
-
-travel = Page.create!(title: 'Travel',
-                      permalink: 'travel',
-                      content: 'This is the travel page',
-                      parent_page_id: meet_info.id,
-                      menu_index: 6,
-                      is_displayed: true)
-
-parking = Page.create!(title: 'Parking',
-                       permalink: 'parking',
-                       content: 'This is the parking page',
-                       parent_page_id: meet_info.id,
-                       menu_index: 7,
-                       is_displayed: true)
+staff = Page.create!(title: 'Staff',
+                     permalink: 'staff',
+                     content: '<p style="text-align: center;"><strong>Meet Director</strong><br /> Brett McClure<br /> University of California<br /> 378 Simpson Center (SAHPC)<br /> Berkeley, CA 94720-4422<br /> <a href="mailto:bmcclure@berkeley.edu">bmcclure@berkeley.edu</a></p> <p style="text-align: center;"><strong>Assistant Meet Director</strong><br /> JT Okada<br /> University of California<br /> 379 Simpson Center (SAHPC)<br /> Berkeley, CA 94720-4422<br /> <a href="mailto:jto@berkeley.edu">jto@berkeley.edu</a></p> <p style="text-align: center;"><strong>Volunteer Assistant Coach</strong><br /> Jonathan Charter<br /> University of California<br /> 379 Simpson Center (SAHPC)<br /> Berkeley, CA 94720-4422<br /> <a href="mailto:jcharter@berkeley.edu">jcharter@berkeley.edu</a></p> <p style="text-align: center;"><strong>Media Relations</strong><br /> Jordan Stepp<br /> Assistant Athletic Communications<br /> University of California<br /> 349 Haas Pavilion<br /> Berkeley, CA 94720-4422<br /> (510) 643-5846<br /> (510) 643-7778 fax<br /> <a href="mailto:aowheeler@berkeley.edu">aowheeler@berkeley.edu</a></p> <p style="text-align: center;"><strong>Event Management</strong><br /> Jaime Santoyo<br /> Event Manager<br /> University of California<br /> 77E Haas Pavilion<br /> Berkeley, CA 94720-4422<br /> (510) 642-5454<br /> (510) 604-8132 cell<br /> (510) 643-1551 fax<br /> <a href="mailto:jsantoyo@berkeley.edu">jsantoyo@berkeley.edu</a></p> <p style="text-align: center;"><strong>Facility Management</strong><br /> Mike Huff<br /> Asst Athletic Director of Facilities<br /> 75 Haas Pavilion<br /> Berkeley, CA 94720-4422<br /> (510) 643-9759<br /> (510) 642-9262 fax<br /> <a href="mailto:mhuff@berkeley.edu">mhuff@berkeley.edu</a></p>',
+                     parent_page_id: meet_info.id,
+                     menu_index: 4,
+                     is_displayed: true)
 
 sponsors = Page.create!(title: 'Sponsors',
                         permalink: 'sponsors',
