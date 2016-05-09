@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-ruby '>= 2.2.4'
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -51,6 +49,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
 end
+
+ruby "2.2.0"
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
