@@ -50,8 +50,6 @@ group :development, :test do
   gem 'shoulda-matchers'
 end
 
-ruby "2.2.0"
-
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -60,3 +58,4 @@ group :development do
   gem 'spring'
 end
 
+ruby "2.3.0"
