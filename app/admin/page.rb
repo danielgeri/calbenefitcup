@@ -9,12 +9,6 @@ ActiveAdmin.register Page do
                 images_attributes:
                   [:id, :image_location, :caption, :slide_index]
 
-  controller do
-    def find_resource
-      Page.find_by_permalink!(params[:id])
-    end
-  end
-  
   form do |f|
     f.inputs do
       f.input :title
