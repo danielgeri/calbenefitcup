@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'pages#show', id: 'home'
+  root to: 'pages#show', permalink: 'home'
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -57,5 +57,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  get ':id', to: 'pages#show', as: :page
+  get '/:permalink', to: 'pages#show', as: :page
 end

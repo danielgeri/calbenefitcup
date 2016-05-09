@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 20160507190539) do
     t.string   "permalink",                      null: false
     t.integer  "menu_index",     default: 0
     t.integer  "parent_page_id"
-    t.string   "forward_url"
+    t.string   "forward_url",    default: ""
     t.boolean  "is_displayed",   default: true
     t.boolean  "is_draft",       default: false
     t.datetime "created_at"
