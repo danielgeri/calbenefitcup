@@ -160,10 +160,6 @@ li.menu-item > p {
   background-color: #FFFFFF;
 }
 
-.callout.dark-gray {
-  background-color: #46535e;
-}
-
 .callout.primary {
   background-color: #0a192d;
   // background-color: #003262;
@@ -178,28 +174,28 @@ nav a {
 }
 
 .title-bar {
-    background: #333;
-    padding: 0.9rem;
+  background: #202020;
+  padding: 0.9rem;
 }
 
 .top-bar {
-    background: #333;
+  background: #202020;
 }
 
 .top-bar ul {
-    background: #333;
+  background: #202020;
 }
 
 .top-bar ul li {
-    background: #333;
+  background: #202020;
 }
 
 .top-bar ul li a {
-    color: #fff;
+    color: #eee;
 }
 
 .menu-text {
-    color: #fff;
+    color: #eee;
 }
 
 @media only screen and (max-width: 40em) {
@@ -225,13 +221,13 @@ nav a {
 }
 
 .dropdown.menu .is-dropdown-submenu-parent.is-right-arrow > a::after {
-    border-color: #fff transparent transparent;
+    border-color: #eee transparent transparent;
 }
 
 .is-drilldown-submenu-parent > a::after {
-    border-color: transparent transparent transparent #fff;
+    border-color: transparent transparent transparent #eee;
 }
 
 .js-drilldown-back::before {
-    border-color: transparent #fff transparent transparent;
+    border-color: transparent #eee transparent transparent;
 }

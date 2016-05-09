@@ -7,7 +7,7 @@
   <div class="top-bar" id="main-menu">
     <div class="top-bar-left">
       <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text">Cal Benefit Cup</li>
+        <li class="menu-text">Cal Benefit Cup <%= Date.today.year.to_s %></li>
       </ul>
     </div>
     
@@ -16,7 +16,7 @@
         
         <% @nav.each do |item| %>
           
-          <% if item.subpages != [] %>
+          <% if !item.subpages.empty? %>
             <li class="has-submenu">
               <a href="#"><%= item.title.titleize %></a>
               <ul class="submenu menu vertical" data-submenu>
@@ -32,7 +32,7 @@
               </ul>
             </li>
                     
-          <% elsif item.parent_page_id == nil %>
+          <% elsif item.parent_page_id.nil? %>
             <li class="menu-item">
               <% unless item.permalink == @page.permalink %>
                 <a href="/<%= item.permalink %>"><%= item.title.titleize %></a>

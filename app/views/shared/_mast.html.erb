@@ -1,6 +1,6 @@
 <div class="large primary mast">
   <div class="row column text-center">
-    <%= image_tag('/assets/header.png') %>
+    <%= link_to_unless_current image_tag('/assets/header.png'), '/' %>
     <% if @meet %>
       <div>
         <h5><%= @meet.name %><br>

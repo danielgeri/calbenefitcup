@@ -20,8 +20,4 @@ class Page < ActiveRecord::Base
   def permalink_from_title
     self.permalink = title.parameterize if permalink == ''
   end
-
-  def to_param
-    permalink
-  end
 end
