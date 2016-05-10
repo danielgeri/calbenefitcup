@@ -16,6 +16,6 @@
 //
 //   .status_tag { background: #6090DB; }
 
-#cke_page_content {
+div[id^="cke_page"] {
   margin-left: 20%;
 }
