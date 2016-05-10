@@ -6,9 +6,7 @@
   
   <div class="top-bar" id="main-menu">
     <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
-        <li class="menu-text">Cal Benefit Cup <%= Date.today.year.to_s %></li>
-      </ul>
+      <%= link_to_unless_current image_tag('menu-logo.png'), '/' %>
     </div>
     
     <div class="top-bar-right">
