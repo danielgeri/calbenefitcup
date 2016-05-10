@@ -4,7 +4,8 @@ class Page < ActiveRecord::Base
   has_many :headlines
   has_many :images
 
-  accepts_nested_attributes_for :headlines, :images
+  accepts_nested_attributes_for :headlines, allow_destroy: true
+  accepts_nested_attributes_for :images, allow_destroy: true
 
   validates_uniqueness_of :permalink
   validates_presence_of :permalink, :title
