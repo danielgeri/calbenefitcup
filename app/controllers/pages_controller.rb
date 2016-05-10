@@ -3,10 +3,10 @@ class PagesController < ApplicationController
     @page = Page.includes(:headlines, :images)
                 .where(is_draft: false)
                 .find_by(permalink: params[:permalink])
-    redirect_to @page.forward_url unless @page.forward_url == ''
-    @images = @page.images.empty? ? nil : @page.images.order(:slide_index)
-    @headlines = @page.headlines.empty? ? nil :
-                   @page.headlines.order(published_on: :desc)
+    redirect_to @page.forward_url unless @page.forward_url.empty?
+    @images = @page.images.order(:slide_index) unless @page.images.empty?
+    @headlines = @page.headlines.order(published_on: :desc) unless
+      @page.headlines.empty?
     @nav = Page.where(is_draft: false, is_displayed: true)
                .where.not(permalink: 'home')
                .order(parent_page_id: :asc, menu_index: :asc)
