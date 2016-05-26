@@ -37,7 +37,7 @@ body {
 }
 
 .canvas {
-  background-image: url('bg-body.jpg');
+  background-image: url('/assets/bg-body.jpg');
   padding-bottom: 3rem;
   background-color: #0a192d;
   background-repeat: no-repeat;
@@ -117,7 +117,7 @@ main article {
   display: block;
   height: 60px;
   width: 60px;
-  background: url("social.png") no-repeat center 0;
+  background: url("/assets/social.png") no-repeat center 0;
 }
 
 a.twitter-ico {
@@ -190,6 +190,10 @@ nav a {
 
 .top-bar ul li a {
     color: #eee;
+}
+
+#main-menu {
+  padding-left: 1.3rem;
 }
 
 .menu-text {
