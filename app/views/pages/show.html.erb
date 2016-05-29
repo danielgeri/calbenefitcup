@@ -4,6 +4,10 @@
   <% else %>
     <%= render "standard_info" %>
   <% end %>
-
-  <%= render "aside" %>
+  
+  <% if @meet.nil? || @meet_gender == "girls" %>
+    <%= render "womens_twitter" %>
+  <% else %>
+    <%= render "mens_twitter" %>
+  <% end %>
 </main>
