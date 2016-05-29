@@ -13,7 +13,10 @@ class PagesController < ApplicationController
                .pluck(:permalink, :title, :id, :parent_page_id, :menu_index)
                .group_by { |menu_props| menu_props[3] }
     @meet = Meet.find_by(is_current: true)
-    @meet_range = @meet.date_range if @meet
+    if @meet
+      @meet_range = @meet.date_range
+      @meet_gender = @meet.gender
+    end
     # respond_to do |format|
     #   format.html # show.html.erb
     #   format.json { render json: @page }
