@@ -151,6 +151,16 @@ li.menu-item > p {
   line-height: 1;
 }
 
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-color: #fdba31 transparent transparent;
+  transparent: transparent;
+}
+
+.dropdown.menu > li.opens-left > .is-dropdown-submenu {
+  left: 0;
+  right: auto;
+}
+
 .light-gray {
   background-color: #eeeeee;
 }
@@ -232,4 +242,17 @@ nav a {
 
 .js-drilldown-back::before {
     border-color: transparent #eee transparent transparent;
+}
+
+.top-bar .menu li:not(:last-child) {
+  border-right: none;
+}
+
+.sticky {
+  width: 100%;
+}
+
+.sticky.is-stuck {
+  position: fixed;
+  z-index: 11;
 }
