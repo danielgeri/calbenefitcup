@@ -243,3 +243,16 @@ nav a {
 .js-drilldown-back::before {
     border-color: transparent #eee transparent transparent;
 }
+
+.top-bar .menu li:not(:last-child) {
+  border-right: none;
+}
+
+.sticky {
+  width: 100%;
+}
+
+.sticky.is-stuck {
+  position: fixed;
+  z-index: 11;
+}
