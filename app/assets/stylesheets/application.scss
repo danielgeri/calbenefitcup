@@ -14,7 +14,12 @@
  *= require_self
  */
 
-/* fdba31 */
+$black: #202020;
+$light-gray: #eeeeee;
+$gold: #fdba31;
+$white: #fefefe;
+$navy: #0a192d;
+
 
 @font-face {
   font-family: 'asapregular';
@@ -29,7 +34,7 @@
 }
 
 body {
-  background-color: #eeeeee;
+  background-color: $black;
 }
 
 .bold {
@@ -39,7 +44,7 @@ body {
 .canvas {
   background-image: url('/assets/bg-body.jpg');
   padding-bottom: 3rem;
-  background-color: #0a192d;
+  background-color: $navy;
   background-repeat: no-repeat;
   background-position: center top;
   background-attachment: absolute;
@@ -51,8 +56,8 @@ aside {
 }
 
 #twitter {
-  border-top: solid 0.4rem #fdba31;
-  border-bottom: solid 0.4rem #fdba31;
+  border-top: solid 0.4rem $gold;
+  border-bottom: solid 0.4rem $gold;
 }
 
 aside h5 {
@@ -61,13 +66,13 @@ aside h5 {
 
 .main {
   min-height: calc(700px +0.8rem);
-  border-top: solid 0.4rem #fdba31;
-  border-bottom: solid 0.4rem #fdba31;
+  border-top: solid 0.4rem $gold;
+  border-bottom: solid 0.4rem $gold;
 }
 
 .home {
-  border-top: solid 0.4rem #fdba31;
-  border-bottom: solid 0.4rem #fdba31;
+  border-top: solid 0.4rem $gold;
+  border-bottom: solid 0.4rem $gold;
   margin-bottom: 2rem;
 }
 
@@ -152,7 +157,7 @@ li.menu-item > p {
 }
 
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
-  border-color: #fdba31 transparent transparent;
+  border-color: $gold transparent transparent;
   transparent: transparent;
 }
 
@@ -162,19 +167,27 @@ li.menu-item > p {
 }
 
 .light-gray {
-  background-color: #eeeeee;
+  background-color: $light-gray;
+}
+
+.black {
+  background-color: $black;
 }
 
 .white {
-  background-color: #FFFFFF;
+  background-color: $white;
 }
 
 .callout.primary {
-  background-color: #0a192d;
+  background-color: $navy;
 }
 
 footer {
   padding: 3rem 0;
+}
+
+footer p, footer h4 {
+  color: $light-gray;
 }
 
 nav a {
@@ -182,24 +195,24 @@ nav a {
 }
 
 .title-bar {
-  background: #202020;
+  background: $black;
   padding: 0.9rem;
 }
 
 .top-bar {
-  background: #202020;
+  background-color: $black;
 }
 
 .top-bar ul {
-  background: #202020;
+  background-color: $black;
 }
 
 .top-bar ul li {
-  background: #202020;
+  background-color: $black;
 }
 
 .top-bar ul li a {
-    color: #eee;
+    color: $light-gray;
 }
 
 #main-menu {
@@ -207,7 +220,7 @@ nav a {
 }
 
 .menu-text {
-    color: #eee;
+    color: $light-gray;
 }
 
 @media only screen and (max-width: 40em) {
@@ -233,15 +246,15 @@ nav a {
 }
 
 .dropdown.menu .is-dropdown-submenu-parent.is-right-arrow > a::after {
-    border-color: #eee transparent transparent;
+    border-color: $light-gray transparent transparent;
 }
 
 .is-drilldown-submenu-parent > a::after {
-    border-color: transparent transparent transparent #eee;
+    border-color: transparent transparent transparent $light-gray;
 }
 
 .js-drilldown-back::before {
-    border-color: transparent #eee transparent transparent;
+    border-color: transparent $light-gray transparent transparent;
 }
 
 .top-bar .menu li:not(:last-child) {
