@@ -5,7 +5,7 @@
       <div>
         <h5><%= @meet.name %><br>
           <%= @meet_range %></h5>
-        <%= link_to_unless_current 'REGISTRATION OPEN', page_path('registration'), class: "button" %>
+        <%= link_to_unless_current 'REGISTRATION OPEN', subpage_path(@meet_page_perm, 'registration'), class: "button" %>
       </div>
     <% else %>
       <div>
