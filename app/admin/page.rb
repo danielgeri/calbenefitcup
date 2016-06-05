@@ -2,9 +2,8 @@ ActiveAdmin.register Page do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
   permit_params :title, :content, :menu_index, :parent_page, :forward_url,
-                :is_displayed, :is_draft, :permalink, :parent_page_id,
+                :is_displayed, :is_draft, :permalink, :parent_page_id, :meet_id,
                 headlines_attributes:
                   [:id, :announcement, :published_on, :_destroy],
                 images_attributes:
@@ -20,6 +19,7 @@ ActiveAdmin.register Page do
       f.input :forward_url
       f.input :is_displayed
       f.input :is_draft
+      f.input :meet
     end
 
     f.inputs do
