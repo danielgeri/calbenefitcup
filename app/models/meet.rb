@@ -1,6 +1,8 @@
 class Meet < ActiveRecord::Base
+  has_one :page
   validates_presence_of :starts_on, :ends_on, :gender, :name
 
+  accepts_nested_attributes_for :page, allow_destroy: true
   validate :valid_start_date,
            :valid_end_date,
            :valid_date_range,

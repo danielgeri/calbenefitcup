@@ -1,13 +1,14 @@
 class Page < ActiveRecord::Base
   has_many :subpages, class_name: 'Page', foreign_key: 'parent_page_id'
   belongs_to :parent_page, class_name: 'Page'
+  belongs_to :meet
   has_many :headlines
   has_many :images
 
   accepts_nested_attributes_for :headlines, allow_destroy: true
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  validates_uniqueness_of :permalink
+  validates :permalink, uniqueness: { scope: :parent_page_id }
   validates_presence_of :permalink, :title
   validate :cannot_display_draft
 
