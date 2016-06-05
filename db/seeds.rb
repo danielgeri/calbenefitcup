@@ -17,7 +17,7 @@ previous = Page.create!(title: 'Previous Meets',
                         permalink: 'previous-meets',
                         content: 'Something about previous meets',
                         menu_index: '3',
-                        is_displayed: true)
+                        is_displayed: false)
 
 home.headlines.create!(announcement: '<p>Welcome to the new Cal Benefit Cup website!</p>',
                        published_on: '2016-05-06')
@@ -53,7 +53,6 @@ admission = Page.create!(title: 'Admission',
                          menu_index: 1,
                          is_displayed: true)
 
-
 haas_pavilion = Page.create!(title: 'Haas Pavilion',
                              permalink: 'haas-pavilion',
                              content: 'This is the haas pavilion page',
@@ -78,6 +77,7 @@ staff = Page.create!(title: 'Staff',
 sponsors = Page.create!(title: 'Sponsors',
                         permalink: 'sponsors',
                         content: 'This is the sponsors page',
+                        parent_page_id: meet_info.id,
                         menu_index: 3,
                         is_displayed: true)
 
