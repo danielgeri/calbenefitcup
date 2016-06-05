@@ -1,11 +1,17 @@
 <main class="row small-collapse large-collapse">
-  <% if @images && @headlines %>
-    <%= render "images_headlines" %>
-  <% else %>
-    <%= render "standard_info" %>
-  <% end %>
+  <div class="small-12 large-8 columns">
+    <% if @images && @headlines %>
+      <%= render "images" %>
+      <%= render "headlines"%>
+    <% elsif @images %>
+      <%= render "images" %>
+      <%= render "standard_info" %>
+    <% else %>
+      <%= render "standard_info" %>
+    <% end %>
+  </div>
   
-  <% if @meet.nil? || @meet_gender == "girls" %>
+  <% if @meet.nil? || @meet_gender == "female" %>
     <%= render "womens_twitter" %>
   <% else %>
     <%= render "mens_twitter" %>
