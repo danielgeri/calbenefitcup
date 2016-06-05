@@ -13,6 +13,12 @@ home = Page.create!(title: 'Home',
                     menu_index: 0,
                     is_displayed: true)
 
+previous = Page.create!(title: 'Previous Meets',
+                        permalink: 'previous-meets',
+                        content: 'Something about previous meets',
+                        menu_index: '3',
+                        is_displayed: true)
+
 home.headlines.create!(announcement: '<p>Welcome to the new Cal Benefit Cup website!</p>',
                        published_on: '2016-05-06')
 
