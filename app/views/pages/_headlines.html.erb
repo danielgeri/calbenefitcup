@@ -1,0 +1,30 @@
+<div class ="home white row">
+  <h4 class="text-center news">Latest News</h4>
+  <div aria-label="Info Boxes" class="orbit text-orbit" data-orbit="" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;" role="region">
+    <ul class="orbit-container">
+      <%= @headlines.each do |headline| %>
+        <li class="orbit-slide">
+          <div>
+            <p class="text-left bold">
+              <em><%= headline.published_on.strftime("%b %-d, %Y") %></em>
+            </p>
+            <%= raw headline.announcement %>
+          </div>
+        </li>
+      <% end %>%>
+    </ul>
+    <nav class="orbit-bullets">
+      <button class="is-active" data-slide="0">
+        <span class="show-for-sr"><% @headlines.first.published_on %></span>
+        <span class="show-for-sr">Current Slide</span>
+      </button>
+      <% @headlines.each_with_index do |headline, index| %>
+        <% unless index == 0 %>
+          <button data-slide="<%= index %>">
+            <span class="show-for-sr"><%= headline.published_on %></span>
+          </button>
+        <% end %>
+      <% end %>
+    </nav>
+  </div>
+</div>

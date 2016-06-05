@@ -101,8 +101,12 @@ footer hr + p {
   clear: both;
 }
 
+#page-title {
+  margin-top: 1.5rem;
+}
+
 main article {
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 2rem 1.5rem 2rem;
 }
 
 .socials {
