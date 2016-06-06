@@ -31,7 +31,7 @@
               <ul class="submenu menu vertical" data-submenu>
                 <% @nav[item[2]].each do |sub| %>
                   <li class="menu-item">
-                    <%= link_to sub[1], page_path(sub[0]) %>
+                    <%= link_to sub[1], subpage_path(item[0], sub[0]) %>
                   </li>
                 <% end %>
               </ul>

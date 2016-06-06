@@ -2,7 +2,7 @@
   <div class="row black">
     <div class="small-12 medium-4 large-4 columns">
       <h4>Contact</h4>
-      <p>378 Simpson Center (SAHPC)<br> 2227 Piedmont Ave.,<br> Berkeley, CA 94720</p>
+      <p>378 Simpson Center (SAHPC)<br> 2227 Piedmont Ave.<br> Berkeley, CA 94720</p>
       <hr>
       <p>Email:
         <%= mail_to("calbenefitcup@gmail.com") %>
@@ -11,7 +11,7 @@
     <div class="small-12 medium-4 large-4 columns">
       <h4>Follow Us</h4>
       <div class="socials">
-        <% if @meet.nil? || @meet_gender == "girls" %>
+        <% if @meet.nil? || @meet_gender == "female" %>
           <%= render "shared/womens_socials" %>
         <% else %>
           <%= render "shared/mens_socials" %>
