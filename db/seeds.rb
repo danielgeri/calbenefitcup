@@ -1,4 +1,12 @@
 # coding: utf-8
+
+# reset data
+model = [AdminUser, Meet, Page, Image, Headline]
+model.each do |m|
+  m.all.each { |a| a.destroy }
+end
+
+# add data
 AdminUser.create!(email: 'admin@example.com', password: 'asdfasdf', password_confirmation: 'asdfasdf')
 
 womens_meet = Meet.create!(name: 'Women\'s Invitational 2016',
