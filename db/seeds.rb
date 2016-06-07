@@ -3,7 +3,7 @@
 # reset data
 model = [AdminUser, Meet, Page, Image, Headline]
 model.each do |m|
-  m.all.each { |a| a.destroy }
+  m.all.each(&:destroy)
 end
 
 # add data
