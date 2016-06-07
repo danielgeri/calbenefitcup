@@ -58,4 +58,6 @@ group :development do
   gem 'spring'
 end
 
-ruby "2.3.0"
+group :production do
+  gem 'pg', '~> 0.15'
+end
