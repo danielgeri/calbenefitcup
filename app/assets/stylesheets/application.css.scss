@@ -23,12 +23,12 @@ $navy: #0a192d;
 
 @font-face {
   font-family: 'asapregular';
-  src: url('fonts/asap-regular-webfont.eot');
-  src: url('fonts/asap-regular-webfont.eot?#iefix') format('embedded-opentype'),
-  url('fonts/asap-regular-webfont.woff2') format('woff2'),
-  url('fonts/asap-regular-webfont.woff') format('woff'),
-  url('fonts/asap-regular-webfont.ttf') format('truetype'),
-  url('fonts/asap-regular-webfont.svg#asapregular') format('svg');
+  src: asset-url('fonts/asap-regular-webfont.eot');
+  src: asset-url('fonts/asap-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  asset-url('fonts/asap-regular-webfont.woff2') format('woff2'),
+  asset-url('fonts/asap-regular-webfont.woff') format('woff'),
+  asset-url('fonts/asap-regular-webfont.ttf') format('truetype'),
+  asset-url('fonts/asap-regular-webfont.svg#asapregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 .canvas {
-  background-image: url('/assets/bg-body.jpg');
+  background-image: image-url('bg-body.jpg');
   padding-bottom: 3rem;
   background-color: $navy;
   background-repeat: no-repeat;
@@ -126,7 +126,7 @@ main article {
   display: block;
   height: 60px;
   width: 60px;
-  background: url("/assets/social.png") no-repeat center 0;
+  background: image-url("social.png") no-repeat center 0;
 }
 
 a.twitter-ico {
