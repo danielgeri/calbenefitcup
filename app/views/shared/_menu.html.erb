@@ -15,9 +15,13 @@
     data-stick-to="top">
     
     <div class="top-bar-left">
-      <%= link_to_unless_current image_tag('menu-logo.png'), '/' %>
+      <% if @meet.gender == "female" %>
+        <%= link_to_unless_current image_tag('wmenu-logo.png'), '/' %>
+      <% else %>
+        <%= link_to_unless_current image_tag('menu-logo.png'), '/' %>
+      <% end %>
     </div>
-    
+
     <div class="top-bar-right">
       <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
         <% @nav[nil].each do |item| %>
