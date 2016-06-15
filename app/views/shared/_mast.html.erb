@@ -1,6 +1,11 @@
 <div class="large primary mast">
   <div class="row column text-center">
-    <%= link_to_unless_current image_tag('header.png'), '/' %>
+    <% if @meet.gender == "female" %>
+      <%= link_to_unless_current image_tag('wheader.png'), '/' %>
+    <% else %>
+      <%= link_to_unless_current image_tag('header.png'), '/' %>
+    <% end %>
+
     <% if @meet %>
       <div>
         <h5><%= @meet.name %><br>
