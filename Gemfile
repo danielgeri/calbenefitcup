@@ -28,16 +28,19 @@ gem 'activeadmin', '~> 1.0.0.pre2'
 # Plus integrations with:
 gem 'devise'
 gem 'ckeditor'
-gem 'paperclip'
+gem 'paperclip', git: 'https://github.com/thoughtbot/paperclip',
+                 ref: '523bd46c768226893f23889079a7aa9c73b57d68'
+
 # gem 'cancan' # or cancancan
 # gem 'draper'
 # gem 'pundit'
 
 # Use Foundation for front-end
 gem 'foundation-rails'
-#needed for aws
+# needed for aws
 gem 'puma'
-
+# For S3 storage to upload files with paperclip
+gem 'aws-sdk', '~> 2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
