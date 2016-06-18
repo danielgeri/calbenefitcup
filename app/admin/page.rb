@@ -13,7 +13,7 @@ ActiveAdmin.register Page do
     f.inputs do
       f.input :title
       f.input :permalink
-      f.input :content, :as => :ckeditor
+      f.input :content, as: :ckeditor
       f.input :menu_index
       f.input :parent_page
       f.input :forward_url
