@@ -22,4 +22,31 @@ class Page < ActiveRecord::Base
   def permalink_from_title
     self.permalink = title.parameterize if permalink == ''
   end
+
+  def construct_nav
+    Page.where(is_draft: false, is_displayed: true)
+        .where.not(permalink: 'home')
+        .order(parent_page_id: :asc, menu_index: :asc)
+        .pluck(:permalink, :title, :id, :parent_page_id, :menu_index)
+        .group_by { |menu_props| menu_props[3] }
+  end
+
+  def find_subpage(permalink)
+    page = subpages.select do |subpage|
+      subpage[:permalink] == permalink
+    end
+    page.first
+  end
+
+  def find_images
+    images.order(:slide_index)
+  end
+
+  def find_headlines
+    headlines.order(published_on: :desc)
+  end
+
+  def find_meet
+    Meet.includes(:page).find_by(is_current: true)
+  end
 end
