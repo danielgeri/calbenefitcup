@@ -14,11 +14,11 @@ ActiveAdmin.register Page do
       f.input :title
       f.input :permalink
       f.input :content, as: :ckeditor
-      f.input :menu_index
-      f.input :parent_page
+      f.input :parent_page, collection: Page.all.where(parent_page_id: nil)
       f.input :forward_url
-      f.input :is_displayed
-      f.input :is_draft
+      f.input :is_displayed, label: 'Display in nav bar?'
+      f.input :is_draft,
+              label: 'Hide page? (this will also hide the page from search engines)'
       f.input :meet
     end
 

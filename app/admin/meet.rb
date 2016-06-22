@@ -3,7 +3,8 @@ ActiveAdmin.register Meet do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   permit_params :starts_on, :ends_on, :gender, :name, :is_current, :register_by,
-                :no_refund_after, pages_attributes: [:id, :content, :title]
+                :no_refund_after,
+                pages_attributes: [:id, :content, :title, :_destroy]
 
   form do |f|
     f.inputs do
@@ -16,12 +17,11 @@ ActiveAdmin.register Meet do
               as: :datepicker,
               datepicker_options: { min_date: '0D' }
       f.input :register_by,
-              as: :datepicker,
-              datepicker_options: { min_date: '0D' }
+              as: :datepicker
       f.input :no_refund_after,
               as: :datepicker,
               datepicker_options: { min_date: '0D' }
-      f.input :is_current
+      f.input :is_current, label: 'Featured?'
     end
 
     f.inputs do
@@ -32,8 +32,9 @@ ActiveAdmin.register Meet do
         p.input :permalink
         p.input :content, as: :ckeditor
         p.input :menu_index
-        p.input :is_displayed
-        p.input :is_draft
+        p.input :is_displayed, label: 'Display in nav bar?'
+        p.input :is_draft,
+                label: 'Hide page? (this will also hide the page from search engines)'
       end
     end
 
