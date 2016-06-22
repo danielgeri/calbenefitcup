@@ -15,7 +15,7 @@
     data-stick-to="top">
     
     <div class="top-bar-left">
-      <% if @meet.gender == "female" %>
+      <% if @meet && @meet.gender == "female" %>
         <%= link_to_unless_current image_tag('wmenu-logo.png'), '/' %>
       <% else %>
         <%= link_to_unless_current image_tag('menu-logo.png'), '/' %>

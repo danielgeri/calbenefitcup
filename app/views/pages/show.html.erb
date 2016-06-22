@@ -3,6 +3,8 @@
     <% if @images && @headlines %>
       <%= render "images" %>
       <%= render "headlines"%>
+    <% elsif @headlines %>
+      <%= render "headlines" %>
     <% elsif @images %>
       <%= render "images" %>
       <%= render "standard_info" %>
@@ -11,7 +13,7 @@
     <% end %>
   </div>
   
-  <% if @meet.nil? || @meet_gender == "female" %>
+  <% if @meet.nil? || @meet.gender == "female" %>
     <%= render "womens_twitter" %>
   <% else %>
     <%= render "mens_twitter" %>
