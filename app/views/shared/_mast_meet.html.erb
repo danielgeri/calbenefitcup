@@ -9,14 +9,16 @@
     <div>
       <h5><%= @meet.name %><br>
         <%= @meet.date_range %></h5>
-      <% if @meet_open %>
+
+      <% if @meet_open && !@meet.page.nil? %>
         <%= link_to_unless_current 'REGISTRATION OPEN',
           subpage_path(@meet.page.permalink, 'registration'),
           class: "button" %>
-      <% else %>
+      <% elsif !@meet.page.nil? %>
         <div>
           <%= link_to 'REGISTRATION CLOSED', '#', class: "button alert" %>
         </div>
+      <% else %>
       <% end %>
     </div>
   </div>
