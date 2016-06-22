@@ -1,21 +1,5 @@
 <div class="large primary mast">
   <div class="row column text-center">
-    <% if @meet.gender == "female" %>
-      <%= link_to_unless_current image_tag('wheader.png'), '/' %>
-    <% else %>
       <%= link_to_unless_current image_tag('header.png'), '/' %>
-    <% end %>
-
-    <% if @meet %>
-      <div>
-        <h5><%= @meet.name %><br>
-          <%= @meet_range %></h5>
-        <%= link_to_unless_current 'REGISTRATION OPEN', subpage_path(@meet_page_perm, 'registration'), class: "button" %>
-      </div>
-    <% else %>
-      <div>
-        <%= link_to 'REGISTRATION CLOSED', '#', class: "button alert" %>
-      </div>
-    <% end %>
   </div>
 </div>
