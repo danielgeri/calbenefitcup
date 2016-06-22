@@ -4,7 +4,7 @@ ActiveAdmin.register Meet do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   permit_params :starts_on, :ends_on, :gender, :name, :is_current, :register_by,
                 :no_refund_after,
-                pages_attributes: [:id, :content, :title, :_destroy]
+                page_attributes: [:id, :permalink, :content, :title, :_destroy]
 
   form do |f|
     f.inputs do
@@ -31,10 +31,6 @@ ActiveAdmin.register Meet do
         p.input :title
         p.input :permalink
         p.input :content, as: :ckeditor
-        p.input :menu_index
-        p.input :is_displayed, label: 'Display in nav bar?'
-        p.input :is_draft,
-                label: 'Hide page? (this will also hide the page from search engines)'
       end
     end
 
