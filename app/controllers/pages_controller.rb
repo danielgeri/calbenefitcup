@@ -16,6 +16,6 @@ class PagesController < ApplicationController
     @headlines = @page.find_headlines unless @page.headlines.empty?
     @nav = @page.construct_nav
     @meet = @page.find_meet
-    @meet_open = (@meet.register_by.blank? || @meet.register_by >= Date.today) if @meet
+    @meet_open = @meet.register_by.blank? || @meet.register_by >= Date.today if @meet
   end
 end
