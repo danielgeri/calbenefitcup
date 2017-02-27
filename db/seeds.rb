@@ -1,12 +1,19 @@
 # coding: utf-8
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# reset data
+model = [AdminUser, Meet, Page, Image, Headline]
+model.each do |m|
+  m.all.each(&:destroy)
+end
+
+# add data
 AdminUser.create!(email: 'admin@example.com', password: 'asdfasdf', password_confirmation: 'asdfasdf')
+
+womens_meet = Meet.create!(name: 'Women\'s Invitational 2016',
+                           starts_on: '2016-10-01',
+                           ends_on: '2016-10-03',
+                           gender: 'female',
+                           is_current: true)
 
 home = Page.create!(title: 'Home',
                     permalink: 'home',
@@ -14,23 +21,31 @@ home = Page.create!(title: 'Home',
                     menu_index: 0,
                     is_displayed: true)
 
+previous = Page.create!(title: 'Previous Meets',
+                        permalink: 'previous-meets',
+                        content: 'Something about previous meets',
+                        menu_index: '3',
+                        is_displayed: false)
+
 home.headlines.create!(announcement: '<p>Welcome to the new Cal Benefit Cup website!</p>',
-                       published_on: "2016-05-06")
+                       published_on: '2016-05-06')
 
 home.headlines.create!(announcement: '<p>Registration for the October event will open soon.</p>',
-                       published_on: "2016-05-05")
+                       published_on: '2016-05-05')
+
+meet_info = Page.create!(title: 'Women\'s Invitational 2016',
+                         permalink: 'womens-invitational-2016',
+                         content: 'This is the women\'s meet info page',
+                         menu_index: 2,
+                         is_displayed: true,
+                         meet_id: womens_meet.id)
 
 register = Page.create!(title: 'Registration',
                         permalink: 'registration',
                         content: '<h3><u>How to Register</u></h3> <ol> <li>Fill and mail in the REGISTRATION FORM to the address listed on the form OR Email your Excel roster to calbenefitcup@gmail.com. To be complete, registration must include: <ul> <li>Club Name, USAG #, Address, Telephone &amp; Email</li> <li>Coach Name(s), USAG # &amp; Safety Certification Expiration Date</li> <li>Athlete Name, USAG #, Level, Birthdate &amp; T-shirt Size</li> </ul> </li> <li>Make check payable to Cal Gymnastics Boosters (Minimum $100.00 non-refundable deposit)</li> <li>Mail check to:</li> </ol> <p>Brett McClure<br /> 378 Simpson Center (SAHPC)<br /> 2227 Piedmont Ave., Berkeley, CA 94720</p> <p>&nbsp;</p> <h3><u>2016 Competitive Entry Fees</u></h3> <table border="1" cellpadding="1" cellspacing="1"> <tbody> <tr> <td><strong>Compulsory Levels 4-7</strong></td> <td>$15</td> </tr> <tr> <td><strong>Optionals Levels 8-10 and Elite</strong></td> <td>$115</td> </tr> <tr> <td><strong>Team Fee*</strong></td> <td>$65</td> </tr> </tbody> </table> <p>* A team is comprised of 3 athletes in the same level.</p> <p>A Cal Benefit Cup grip bag and other materials are included with all entries.</p> <p>&nbsp;</p> <h3><u>Important Registration Policies</u></h3> <ul> <li>It is your responsibility to provide coach and gymnast information at registration. No coach can be allowed on the floor during the meet if USAG and safety certification information is not submitted AND current. No gymnast can be allowed to compete if USAG information is not submitted AND current.</li> <li>Registration for each session will close when the session is full</li> <li>Available slots are allotted on a first-come, first served basis</li> <li>Slots are only guaranteed after corresponding registration fees have been received</li> <li>All eligible teams will be registered, unless you specifically opt out of team competition</li> <li>A non-refundable registration deposit ($100) is due upon application</li> <li>Make check payable to Cal Gymnastics Boosters</li> <li>Full balance due by Dec 12, 2015</li> </ul> <h3><u>Refunds</u></h3> <ul> <li>Requests for refunds must be received before Dec 12, 2015</li> <li>After Dec 12, 2015 refund requests must be accompanied by a doctor&rsquo;s note</li> <li>No refunds for requests made after Jan 2, 2016</li> <li>All refunds will be processed after the meet</li> </ul>',
+                        parent_page_id: meet_info.id,
                         menu_index: 1,
                         is_displayed: true)
-
-meet_info = Page.create!(title: 'Meet Info',
-                         permalink: 'meet-info',
-                         content: 'This is the meet info page',
-                         menu_index: 2,
-                         is_displayed: true)
 
 schedule = Page.create!(title: 'Schedule',
                         permalink: 'schedule',
@@ -45,7 +60,6 @@ admission = Page.create!(title: 'Admission',
                          parent_page_id: meet_info.id,
                          menu_index: 1,
                          is_displayed: true)
-
 
 haas_pavilion = Page.create!(title: 'Haas Pavilion',
                              permalink: 'haas-pavilion',
@@ -71,6 +85,7 @@ staff = Page.create!(title: 'Staff',
 sponsors = Page.create!(title: 'Sponsors',
                         permalink: 'sponsors',
                         content: 'This is the sponsors page',
+                        parent_page_id: meet_info.id,
                         menu_index: 3,
                         is_displayed: true)
 

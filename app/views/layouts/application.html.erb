@@ -15,9 +15,14 @@
 
   <body>
     <%= render "shared/menu" %>
-    
+
     <div class="canvas">
-      <%= render "shared/mast" %>
+      <% if @meet %>
+        <%= render "shared/mast_meet" %>
+      <% else %>
+        <%= render "shared/mast" %>
+      <% end %>
+
       <%= yield %>
     </div>
 

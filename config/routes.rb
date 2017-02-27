@@ -57,5 +57,6 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get '/:parent_permalink/:permalink', to: 'pages#show', as: :subpage
   get '/:permalink', to: 'pages#show', as: :page
 end

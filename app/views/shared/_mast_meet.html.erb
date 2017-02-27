@@ -1,0 +1,25 @@
+<div class="large primary mast">
+  <div class="row column text-center">
+    <% if @meet.gender == "female" %>
+      <%= link_to_unless_current image_tag('wheader.png'), '/' %>
+    <% else %>
+      <%= link_to_unless_current image_tag('header.png'), '/' %>
+    <% end %>
+
+    <div>
+      <h5><%= @meet.name %><br>
+        <%= @meet.date_range %></h5>
+
+      <% if @meet_open && !@meet.page.nil? %>
+        <%= link_to_unless_current 'REGISTRATION OPEN',
+          subpage_path(@meet.page.permalink, 'registration'),
+          class: "button" %>
+      <% elsif !@meet.page.nil? %>
+        <div>
+          <%= link_to 'REGISTRATION CLOSED', '#', class: "button alert" %>
+        </div>
+      <% else %>
+      <% end %>
+    </div>
+  </div>
+</div>

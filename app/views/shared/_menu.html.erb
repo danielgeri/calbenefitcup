@@ -1,14 +1,27 @@
-<nav>
-  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+<nav data-sticky-container>
+  <div class="title-bar sticky"
+    data-responsive-toggle="main-menu"
+    data-hide-for="medium"
+    data-sticky
+    data-options="marginTop:0;"
+    data-stick-to="top">
     <button class="menu-icon" type="button" data-toggle></button>
     <div class="title-bar-title">Menu</div>
   </div>
   
-  <div class="top-bar" id="main-menu">
-    <div class="top-bar-left">
-      <%= link_to_unless_current image_tag('menu-logo.png'), '/' %>
-    </div>
+  <div class="top-bar sticky" id="main-menu"
+    data-sticky
+    data-options="marginTop:0;"
+    data-stick-to="top">
     
+    <div class="top-bar-left">
+      <% if @meet && @meet.gender == "female" %>
+        <%= link_to_unless_current image_tag('wmenu-logo.png'), '/' %>
+      <% else %>
+        <%= link_to_unless_current image_tag('menu-logo.png'), '/' %>
+      <% end %>
+    </div>
+
     <div class="top-bar-right">
       <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
         <% @nav[nil].each do |item| %>
@@ -22,7 +35,7 @@
               <ul class="submenu menu vertical" data-submenu>
                 <% @nav[item[2]].each do |sub| %>
                   <li class="menu-item">
-                    <%= link_to sub[1], page_path(sub[0]) %>
+                    <%= link_to sub[1], subpage_path(item[0], sub[0]) %>
                   </li>
                 <% end %>
               </ul>

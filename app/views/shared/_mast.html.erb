@@ -1,16 +1,5 @@
 <div class="large primary mast">
   <div class="row column text-center">
-    <%= link_to_unless_current image_tag('header.png'), '/' %>
-    <% if @meet %>
-      <div>
-        <h5><%= @meet.name %><br>
-          <%= @meet_range %></h5>
-        <%= link_to_unless_current 'REGISTRATION OPEN', page_path('registration'), class: "button" %>
-      </div>
-    <% else %>
-      <div>
-        <%= link_to 'REGISTRATION CLOSED', '#', class: "button alert" %>
-      </div>
-    <% end %>
+      <%= link_to_unless_current image_tag('header.png'), '/' %>
   </div>
 </div>

@@ -75,11 +75,11 @@ ActiveRecord::Schema.define(version: 20160507190539) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "page_id"
-    t.string   "image_location_file_name",                null: false
-    t.string   "image_location_content_type",             null: false
-    t.integer  "image_location_file_size",                null: false
-    t.datetime "image_location_updated_at",               null: false
-    t.string   "caption"
+    t.string   "image_location_file_name",                 null: false
+    t.string   "image_location_content_type",              null: false
+    t.integer  "image_location_file_size",                 null: false
+    t.datetime "image_location_updated_at",                null: false
+    t.string   "caption",                     default: ""
     t.integer  "slide_index",                 default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 20160507190539) do
     t.string   "permalink",                      null: false
     t.integer  "menu_index",     default: 0
     t.integer  "parent_page_id"
+    t.integer  "meet_id"
     t.string   "forward_url",    default: ""
     t.boolean  "is_displayed",   default: true
     t.boolean  "is_draft",       default: false
@@ -112,6 +113,7 @@ ActiveRecord::Schema.define(version: 20160507190539) do
     t.datetime "updated_at"
   end
 
+  add_index "pages", ["meet_id"], name: "index_pages_on_meet_id", using: :btree
   add_index "pages", ["parent_page_id"], name: "index_pages_on_parent_page_id", using: :btree
   add_index "pages", ["permalink"], name: "index_pages_on_permalink", using: :btree
 
